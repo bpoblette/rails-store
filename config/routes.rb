@@ -11,4 +11,27 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # 4 CRUD Actions (Create, Read, Update Delete)
+  # translates to 8 typical routes
+  # # Index
+  # get "/products", to: "products#index"
+  # # New
+  # get "/products/new", to: "products#new"
+  # # Create
+  # post "/products", to: "products#create"
+  # # Show
+  # get "/products/:id", to: "products#show"
+  # # Edit
+  # get "/products/:id:edit", to: "products#edit"
+  # # Update (full) PUT
+  # put "/products/:id", to: "products#update"
+  # # Update (partial) Patch
+  # patch "/products/:id", to: "products#update"
+  # # Destroy
+  # delete "/products/:id", to: "products#destroy"
+
+  # typing all these routes is redundant
+  # this does the same thing
+  root "products#index"
+  resources :products
 end
