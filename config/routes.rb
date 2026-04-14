@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   # typing all these routes is redundant
   # this does the same thing
   root "products#index"
-  resources :products
+  resources :products do
+    resources :subscribers, only: [ :create ]
+  end
 end
