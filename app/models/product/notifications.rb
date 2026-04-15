@@ -7,14 +7,14 @@ module Product::Notifications
   end
 
   def back_in_stock?
-    inventory_count_previously_was.zero? && 
+    inventory_count_previously_was.zero? &&
     inventory_count.positive?
   end
 
   def notify_subscribers
     subscribers.each do |subscriber|
-      ProductMailer.with(product: self, 
-      subscriber: subscriber).in_stock_deliver_later
+      ProductMailer.with(product: self,
+      subscriber: subscriber).in_stock.deliver_later
     end
   end
 end

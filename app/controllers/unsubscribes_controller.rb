@@ -1,5 +1,5 @@
 class UnsubscribesController < ApplicationController
-  allow_unauthenticated_access 
+  allow_unauthenticated_access
   before_action :set_subscriber
 
   def show
@@ -9,7 +9,7 @@ class UnsubscribesController < ApplicationController
 
   private
     def set_subscriber
-      @subscriber = Subscriber.find_by_token_for(:unsubscribe, 
+      @subscriber = Subscriber.find_by_token_for(:unsubscribe,
       params[:token])
     end
 end
